@@ -39,8 +39,6 @@
         ],
 
     ];
-   
-    var_dump($hotels)
 ?>
 
 
@@ -55,33 +53,38 @@
     <title>PHP Hotel</title>
 </head>
 <body>
-    <div>
-        <h1>HOTELS:</h1>
-        <?php foreach ($hotels as $hotel) { ?>
-            <ul>    
-                <li>
-                    <?php echo $hotel["name"]?>
-                </li>
-                <li>
-                    <?php echo $hotel["description"]?>
-                </li>
-                <li>
-                    <?php if ($hotel["parking"] == true) {
+    <div class="container">
+        <h1 class="text-center my-5">HOTELS</h1>
+                <!--Tabella Hotel-->
+                
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Description</th>
+                <th scope="col">Parking</th>
+                <th scope="col">Vote</th>
+                <th scope="col">Distance to center</th>
+                </tr>
+            </thead>
+            <?php foreach ($hotels as $hotel) { ?>
+            <tbody>
+                <tr>
+                <td><?php echo $hotel["name"]?></td>
+                <td><?php echo $hotel["description"]?></td>
+                <td><?php if ($hotel["parking"] == true) {
                         echo "true";
                     }
                     elseif ($hotel["parking"] == false) {
                         echo "false";
                     } 
-                    ?>
-                </li>
-                <li>
-                    <?php echo $hotel["vote"]?>
-                </li>
-                <li>
-                    <?php echo $hotel["distance_to_center"]?>
-                </li>   
-            </ul>
-        <?php }; ?>                 
+                    ?></td>
+                <td><?php echo $hotel["vote"]?></td>
+                <td><?php echo $hotel["distance_to_center"]?></td>
+                </tr>
+            </tbody>
+            <?php }; ?> 
+        </table>
     </div>
 </body>
 </html>
