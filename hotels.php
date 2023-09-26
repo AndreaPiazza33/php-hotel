@@ -39,7 +39,8 @@
         ],
 
     ];
-
+   
+    var_dump($hotels)
 ?>
 
 
@@ -51,6 +52,28 @@
     <title>PHP Hotel</title>
 </head>
 <body>
-    <h1>ciao <?php echo $name ?></h1>
+    <div>
+        <h1>HOTELS:</h1>
+        
+        <?php foreach ($hotels as $hotel) { ?>
+            <ul>    
+                <li>
+                    <?php echo $hotel["name"]?>
+                </li>
+                <li>
+                    <?php echo $hotel["description"]?>
+                </li>
+                <li>
+                    <?php echo $hotel["parking"]?>
+                </li>
+                <li>
+                    <?php echo $hotel["vote"]?>
+                </li>
+                <li>
+                    <?php echo $hotel["distance_to_center"]?>
+                </li>   
+            </ul>
+        <?php }; ?>                 
+    </div>
 </body>
 </html>
