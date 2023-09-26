@@ -57,7 +57,6 @@
 <body>
     <div>
         <h1>HOTELS:</h1>
-        
         <?php foreach ($hotels as $hotel) { ?>
             <ul>    
                 <li>
@@ -67,7 +66,13 @@
                     <?php echo $hotel["description"]?>
                 </li>
                 <li>
-                    <?php echo $hotel["parking"]?>
+                    <?php if ($hotel["parking"] == true) {
+                        echo "true";
+                    }
+                    elseif ($hotel["parking"] == false) {
+                        echo "false";
+                    } 
+                    ?>
                 </li>
                 <li>
                     <?php echo $hotel["vote"]?>
